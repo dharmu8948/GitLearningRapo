@@ -1,0 +1,21 @@
+//Using "this" keyword to impliment the program
+class Testthis1
+{
+	int a,b;     //Instance variable    
+	void getdata(int a,int b)    // Local  Variable
+	{
+		a=a;
+		b=b;
+	}
+	void Putdata()
+	{
+		System.out.println("a="+a);
+		System.out.println("b="+b);
+	}
+	public static void main(String[] args)
+	{
+		Testthis1 T=new Testthis1();
+		T.getdata(50,70);
+		T.Putdata();
+	}
+}
