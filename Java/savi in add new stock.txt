@@ -1,0 +1,30 @@
+try
+{
+DBConnection db=new DBConnection();
+db.pstmt=db.con.prepareStatement("insert into movie_stock(movieid,price,stock,recorder,moviename,type) values(?,?,?,?,?,?)");
+db.pstmt.setString(1,(String)jComboBox4.getSelectedItem());
+db.pstmt.setString(2,jTextField22.getText());
+db.pstmt.setString(3,jTextField23.getText());
+db.pstmt.setString(4,jTextField24.getText());
+db.pstmt.setString(5,jTextField25.getText());
+db.pstmt.setString(6,(String)jComboBox5.getSelectedItem());
+int i=db.pstmt.executeUpdate();
+if(i>0)
+{
+JOptionPane.showMessageDialog(this,"Movie Stock Added Successfully..");
+jTextField22.setText("");
+jTextField23.setText("");
+jTextField24.setText("");
+jTextField25.setText("");
+jComboBox4.setSelectedItem("Select");
+jComboBox5.setSelectedItem("Select");
+}
+else
+{
+JOptionPane.showMessageDialog(this,"Error!!!!");
+}
+}
+catch(Exception e)
+{
+e.printStackTrace();
+}
