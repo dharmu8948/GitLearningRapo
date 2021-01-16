@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main(){
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++)
+	cin>>a[i];
+	int max1=-1,max2 = -1,max3=-1;
+	for(int i=0;i<n;i++){
+		if(max1<a[i])
+		max1 = a[i];
+	}
+	for(int i=0;i<n;i++){
+		if(max2<a[i] && max2<max1)
+		max2 = a[i];
+	}
+	for(int i=0;i<n;i++){
+		if(max3<a[i] && max3<max2 && max3<max1)
+		max3 = a[i];
+	}
+	cout<<"Three largest Numbers is "<<max1<<" "<<max2<<" "<<max3<<endl;
+	
+}
